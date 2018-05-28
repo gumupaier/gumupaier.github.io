@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-28T05:47:46.914Z</updated>
+  <updated>2018-05-28T14:58:17.003Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask环境配置</title>
+    <link href="http://yoursite.com/2018/05/28/Flask%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/2018/05/28/Flask环境配置/</id>
+    <published>2018-05-28T14:49:03.000Z</published>
+    <updated>2018-05-28T14:58:17.003Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Flask安装环境"><a href="#Flask安装环境" class="headerlink" title="Flask安装环境"></a>Flask安装环境</h2><p>使用虚拟环境安装flask,可以避免包的混乱和版本的冲突。</p><p>虚拟环境使用virtualenv创建，可以查看系统中是否安装了virtualenv：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv <span class="comment">--version</span></span><br></pre></td></tr></table></figure><h3 id="安装虚拟环境"><a href="#安装虚拟环境" class="headerlink" title="安装虚拟环境"></a>安装虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pip install virtualenv</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo pip install virtualenvwrapper</span></span><br></pre></td></tr></table></figure><h3 id="创建虚拟环境（需在联网状态下）"><a href="#创建虚拟环境（需在联网状态下）" class="headerlink" title="创建虚拟环境（需在联网状态下）"></a>创建虚拟环境（需在联网状态下）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv flask_py2</span></span><br></pre></td></tr></table></figure><p>安装完虚拟环境后，如果提示找不到mkvirtualenv命令，需配置环境变量：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.创建目录用来存放虚拟环境</span></span><br><span class="line">mkdir</span><br><span class="line"><span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"><span class="comment"># 2.打开～/.bashrc文件，并添加如下:</span></span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=<span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>//bin/virtualenvwrapper.sh</span><br><span class="line"><span class="comment"># 3.运行</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p><h3 id="进入虚拟环境"><a href="#进入虚拟环境" class="headerlink" title="进入虚拟环境"></a>进入虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> workon flask_py2</span></span><br></pre></td></tr></table></figure><h3 id="退出虚拟环境"><a href="#退出虚拟环境" class="headerlink" title="退出虚拟环境"></a>退出虚拟环境</h3><p>如果环境为真实环境，会提示deactive：未找到命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> deactive flask_py2</span></span><br></pre></td></tr></table></figure></p><h2 id="安装Flask"><a href="#安装Flask" class="headerlink" title="安装Flask"></a>安装Flask</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">指定Flask版本安装</span><br><span class="line">$ pip install flask==<span class="number">0.10</span><span class="number">.1</span></span><br><span class="line">输出requirements.txt文件</span><br><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure><p>mac 系统<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">easy_install flask==<span class="number">0.10</span><span class="number">.1</span></span><br></pre></td></tr></table></figure></p><p>使用requirements文件安装<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> -r requirements.txt</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Flask安装环境&quot;&gt;&lt;a href=&quot;#Flask安装环境&quot; class=&quot;headerlink&quot; title=&quot;Flask安装环境&quot;&gt;&lt;/a&gt;Flask安装环境&lt;/h2&gt;&lt;p&gt;使用虚拟环境安装flask,可以避免包的混乱和版本的冲突。&lt;/p&gt;
+&lt;p&gt;虚拟环境使
+      
+    
+    </summary>
+    
+      <category term="Flask" scheme="http://yoursite.com/categories/Flask/"/>
+    
+    
+      <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
+    
+      <category term="Virtualenv" scheme="http://yoursite.com/tags/Virtualenv/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -34,29 +62,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>个人简历</title>
-    <link href="http://yoursite.com/2018/05/23/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
-    <id>http://yoursite.com/2018/05/23/个人简历/</id>
-    <published>2018-05-23T12:27:39.000Z</published>
-    <updated>2018-05-28T05:47:46.915Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><ul><li>个人简介：一个聪明可爱机智善良勇敢无畏沉鱼落雁闭月羞花倾国倾城国色天香天生丽质霸气侧漏邪魅狂拽冰肌玉肤智商超群极具魅力温文尔雅风度翩翩彬彬有礼威风堂堂天下无双眉清目秀吹弹可破美目盼兮清新俊逸酷到爆的Python攻城狮<a id="more"></a></li><li><p>信息：吴海胜 男 汉族 现居：北京昌平区 毕业时间：2018.06</p></li><li><p>手机：19920140390</p></li><li><p>个人主页：<a href="http://gumupaier.com" target="_blank" rel="noopener">http://gumupaier.com</a></p></li><li><p>博客链接：<a href="https://www.cnblogs.com/qflyue/" target="_blank" rel="noopener">https://www.cnblogs.com/qflyue/</a></p></li><li><p>求职意向：Python工程师</p></li></ul><h2 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h2><ul><li><p>精通Python开发，理解MVC架构，熟悉OOP思想，熟练使用Django，Flask</p></li><li><p>掌握MySQL基本操作，有数据库设计经验，熟悉InnoDB，MyISAM存储引擎</p></li><li><p>掌握linux常用命令极其环境部署</p></li><li><p>熟悉HTML，CSS，JS，JQuery开发和Bootstrap前端框架</p></li><li><p>了解memcache，redis缓存服务器的使用</p></li><li><p>熟悉git的常用操作，了解常用数据模式</p></li><li><p>数据基本的数据结构及算法，有良好的代码习惯</p></li><li><p>熟悉STM32,51系列单片机，熟悉各种传感器驱动的编写</p></li></ul><h2 id="项目检验"><a href="#项目检验" class="headerlink" title="项目检验"></a>项目检验</h2><ul><li><p>考勤管理系统设计 【2018.05】 职责：独立开发</p><p>  简介：毕业设计，为实验室设计的考勤管理系统，功能包括签到签退统计，请假管理，公告发布，考核管理等。</p><p>  工作任务：负责后台整体的搭建，包括数据库的设计，后端业务逻辑的   梳理，需求分析，以及各个功能模块的代码实现和最终的项 目部署等相关工作。</p><p>  相关技术：Django+Bootstrap+mysql</p></li><li><p>蔬菜大棚环境监测系统 【2016.5】 职责：项目负责</p><p>  项目简介：实验室项目，对于蔬菜大棚环境如温湿度，光照强度，CO2浓度进行检测。</p><p>  工作任务：硬件调试，传感器驱动编写，单片机程序指导。</p><p>  相关技术：STM32单片机  </p></li></ul><h2 id="校内实践"><a href="#校内实践" class="headerlink" title="校内实践"></a>校内实践</h2><ul><li><p>校级三好学生    【2016】</p></li><li><p>通过英语四级    【2016】</p></li><li><p>蓝桥杯竞赛软件类省级三等奖    【2016】</p></li><li><p>蓝桥杯竞赛嵌入式组省赛二等奖    【2017】</p></li><li><p>获得国家励志奖学金    【2017】</p></li><li><p>嵌入式实验室负责人    【2015 - 2017】</p></li></ul><h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><ul><li><p>独立自主，认真，有责任心</p></li><li><p>个性积极主动，良好沟通，协调能力，讲求团队合作精神</p></li><li><p>性格开朗、乐观，对人诚恳、热情</p></li><li><p>勇于迎接新挑战，领悟力和接受能力强，有集体荣誉感</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;个人简介&quot;&gt;&lt;a href=&quot;#个人简介&quot; class=&quot;headerlink&quot; title=&quot;个人简介&quot;&gt;&lt;/a&gt;个人简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;个人简介：一个聪明可爱机智善良勇敢无畏沉鱼落雁闭月羞花倾国倾城国色天香天生丽质霸气侧漏邪魅狂拽冰肌玉肤智商超群极具魅力温文尔雅风度翩翩彬彬有礼威风堂堂天下无双眉清目秀吹弹可破美目盼兮清新俊逸酷到爆的Python攻城狮
-    
-    </summary>
-    
-      <category term="个人简历" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
-    
-    
-      <category term="个人简历" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
     
   </entry>
   
@@ -85,6 +90,29 @@
     
     
       <category term="有人说你" scheme="http://yoursite.com/tags/%E6%9C%89%E4%BA%BA%E8%AF%B4%E4%BD%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人简历</title>
+    <link href="http://yoursite.com/2018/05/23/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
+    <id>http://yoursite.com/2018/05/23/个人简历/</id>
+    <published>2018-05-23T12:27:39.000Z</published>
+    <updated>2018-05-28T05:47:46.915Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><ul><li>个人简介：一个聪明可爱机智善良勇敢无畏沉鱼落雁闭月羞花倾国倾城国色天香天生丽质霸气侧漏邪魅狂拽冰肌玉肤智商超群极具魅力温文尔雅风度翩翩彬彬有礼威风堂堂天下无双眉清目秀吹弹可破美目盼兮清新俊逸酷到爆的Python攻城狮<a id="more"></a></li><li><p>信息：吴海胜 男 汉族 现居：北京昌平区 毕业时间：2018.06</p></li><li><p>手机：19920140390</p></li><li><p>个人主页：<a href="http://gumupaier.com" target="_blank" rel="noopener">http://gumupaier.com</a></p></li><li><p>博客链接：<a href="https://www.cnblogs.com/qflyue/" target="_blank" rel="noopener">https://www.cnblogs.com/qflyue/</a></p></li><li><p>求职意向：Python工程师</p></li></ul><h2 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h2><ul><li><p>精通Python开发，理解MVC架构，熟悉OOP思想，熟练使用Django，Flask</p></li><li><p>掌握MySQL基本操作，有数据库设计经验，熟悉InnoDB，MyISAM存储引擎</p></li><li><p>掌握linux常用命令极其环境部署</p></li><li><p>熟悉HTML，CSS，JS，JQuery开发和Bootstrap前端框架</p></li><li><p>了解memcache，redis缓存服务器的使用</p></li><li><p>熟悉git的常用操作，了解常用数据模式</p></li><li><p>数据基本的数据结构及算法，有良好的代码习惯</p></li><li><p>熟悉STM32,51系列单片机，熟悉各种传感器驱动的编写</p></li></ul><h2 id="项目检验"><a href="#项目检验" class="headerlink" title="项目检验"></a>项目检验</h2><ul><li><p>考勤管理系统设计 【2018.05】 职责：独立开发</p><p>  简介：毕业设计，为实验室设计的考勤管理系统，功能包括签到签退统计，请假管理，公告发布，考核管理等。</p><p>  工作任务：负责后台整体的搭建，包括数据库的设计，后端业务逻辑的   梳理，需求分析，以及各个功能模块的代码实现和最终的项 目部署等相关工作。</p><p>  相关技术：Django+Bootstrap+mysql</p></li><li><p>蔬菜大棚环境监测系统 【2016.5】 职责：项目负责</p><p>  项目简介：实验室项目，对于蔬菜大棚环境如温湿度，光照强度，CO2浓度进行检测。</p><p>  工作任务：硬件调试，传感器驱动编写，单片机程序指导。</p><p>  相关技术：STM32单片机  </p></li></ul><h2 id="校内实践"><a href="#校内实践" class="headerlink" title="校内实践"></a>校内实践</h2><ul><li><p>校级三好学生    【2016】</p></li><li><p>通过英语四级    【2016】</p></li><li><p>蓝桥杯竞赛软件类省级三等奖    【2016】</p></li><li><p>蓝桥杯竞赛嵌入式组省赛二等奖    【2017】</p></li><li><p>获得国家励志奖学金    【2017】</p></li><li><p>嵌入式实验室负责人    【2015 - 2017】</p></li></ul><h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><ul><li><p>独立自主，认真，有责任心</p></li><li><p>个性积极主动，良好沟通，协调能力，讲求团队合作精神</p></li><li><p>性格开朗、乐观，对人诚恳、热情</p></li><li><p>勇于迎接新挑战，领悟力和接受能力强，有集体荣誉感</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;个人简介&quot;&gt;&lt;a href=&quot;#个人简介&quot; class=&quot;headerlink&quot; title=&quot;个人简介&quot;&gt;&lt;/a&gt;个人简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;个人简介：一个聪明可爱机智善良勇敢无畏沉鱼落雁闭月羞花倾国倾城国色天香天生丽质霸气侧漏邪魅狂拽冰肌玉肤智商超群极具魅力温文尔雅风度翩翩彬彬有礼威风堂堂天下无双眉清目秀吹弹可破美目盼兮清新俊逸酷到爆的Python攻城狮
+    
+    </summary>
+    
+      <category term="个人简历" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
+    
+    
+      <category term="个人简历" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
     
   </entry>
   
