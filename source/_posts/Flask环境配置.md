@@ -94,3 +94,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 ```bash
 source ~/.bash_profile
 ```
+
+5、创建python3 flask环境
+```bash
+python3 -m venv flask_py3
+```
