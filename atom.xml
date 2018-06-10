@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-29T15:52:06.130Z</updated>
+  <updated>2018-06-10T06:29:56.179Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker学习笔记</title>
+    <link href="http://yoursite.com/2018/06/10/docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/06/10/docker学习笔记/</id>
+    <published>2018-06-10T06:10:31.000Z</published>
+    <updated>2018-06-10T06:29:56.179Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>运行docker 命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name webserver -d -p 80:80 nginx</span><br></pre></td></tr></table></figure></p><p>出现以下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker: Error response from daemon: Conflict. The container name <span class="string">"/webserver"</span> is already <span class="keyword">in</span> use by container <span class="string">"63394b57efbb4b45e4deb22f457b8bbc14265bac76deee5b1dc342d987a7437a"</span>. You have to remove (or rename) that container to be able to reuse that name.</span><br><span class="line">See <span class="string">'docker run --help'</span>.</span><br></pre></td></tr></table></figure></p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>查看当前运行容器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps -a</span><br></pre></td></tr></table></figure></p><p>查看到之前docker容器还未退出，导致容器冲突重名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">63394b57efbb        nginx                                           <span class="string">"nginx -g 'daemon of…"</span>    2 weeks ago         Exited (0) 2 weeks ago                                           webserver</span><br></pre></td></tr></table></figure></p><p>使用下面命令删除容器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 63394b57efbb</span><br></pre></td></tr></table></figure></p><p>然后重启webserver容器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker restart nginx</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;错误描述&quot;&gt;&lt;a href=&quot;#错误描述&quot; class=&quot;headerlink&quot; title=&quot;错误描述&quot;&gt;&lt;/a&gt;错误描述&lt;/h1&gt;&lt;p&gt;运行docker 命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask-RESTPlus</title>
+    <link href="http://yoursite.com/2018/06/05/Flask-RESTPlus/"/>
+    <id>http://yoursite.com/2018/06/05/Flask-RESTPlus/</id>
+    <published>2018-06-05T15:24:46.000Z</published>
+    <updated>2018-06-05T15:24:46.546Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>程序员神级注释</title>
